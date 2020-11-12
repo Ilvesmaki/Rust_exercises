@@ -10,18 +10,18 @@
 // No boiler plate code this time,
 // you can do this!
 
-// I AM NOT DONE
-
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 impl AppendBar for Vec<String> {
     fn append_bar(self) -> Self{
-        let mut v : Vec<String> = vec!(self.iter().map(|x|x).collect());
-        v.push(String::from("Bar"))
+        let mut vec = self.clone();
+        vec.push("Bar".to_string());
+        return vec;
     }
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;
